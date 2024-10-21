@@ -1,0 +1,219 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* =========================
+   Global Styles
+   ========================= */
+* {
+    margin: 0; /* Remove default margin */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+    background-color: rgb(220, 255, 236); /* Light green background */
+    font-family: 'Roboto', sans-serif; /* Set font family */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* =========================
+   Header and Footer Styles
+   ========================= */
+header, footer {
+    background-color: rgb(39, 126, 98); /* Dark green background for header and footer */
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed positioning */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    z-index: 1000; /* Ensure it sits above other content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+header {
+    top: 0; /* Position at the top */
+    height: 80px; /* Fixed height */
+    flex-direction: column; /* Stack items vertically */
+    text-align: left; /* Left-align text for larger screens */
+    align-items: flex-start; /* Align items to the start */
+}
+
+footer {
+    bottom: 0; /* Position at the bottom */
+    height: 50px; /* Fixed height */
+    flex-direction: row; /* Horizontal layout */
+    padding: 15px 20px; /* Padding for footer */
+    text-align: center; /* Center-align footer text */
+}
+
+/* =========================
+   Navigation Styles
+   ========================= */
+   nav {
+    background-color: rgb(63, 171, 128); /* Medium green background for navigation */
+    position: fixed; /* Fixed positioning */
+    top: 80px; /* Position below header */
+    bottom: 50px; /* Position above footer */
+    left: 0; /* Align to the far left */
+    width: 200px; /* Adjust width as needed */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    padding-top: 20px; /* Padding at the top */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin: 0; /* Ensure no margin is affecting positioning */
+}
+
+
+nav ul {
+    list-style: none; /* Remove default list styles */
+    width: 100%; /* Full width */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    justify-content: center; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+nav li a {
+    display: flex; /* Use flexbox for links */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 15px; /* Padding for links */
+    font-size: calc(16px + 0.2vw); /* Dynamic font size based on viewport width */
+    max-width: 200px; /* Limit link width */
+    border-radius: 5px; /* Rounded corners */
+    height: 100%; /* Full height */
+}
+
+nav li a:hover {
+    background-color: #2e8b57; /* Darker green on hover */
+}
+
+/* =========================
+   Main Content Styles
+   ========================= */
+  main {
+    margin-left: 200px; /* Offset to accommodate nav */
+    padding: 20px; /* Padding for main content */
+    padding-top: 100px; /* Space for header */
+    padding-bottom: 70px; /* Space for footer */
+    background-color: (220, 255, 236); /* Light background for main content */
+    flex: 1; /* Allow main to take remaining space */
+    overflow: auto; /* Allow scrolling */
+    height: calc(100vh - 130px); /* Adjust height taking fixed header and footer into account */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content to the top */
+}
+
+
+/* =========================
+   Content Container Styles
+   ========================= */
+.content-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the start */
+    gap: 20px; /* Space between image and text */
+    max-width: 1000px; /* Prevent content from stretching too wide */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center the container */
+}
+
+.content-container img.profile-image {
+    max-width: 300px; /* Limit image width */
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Vertical margin */
+}
+
+/* =========================
+   Text Content Styles
+   ========================= */
+.text-content {
+    flex: 1; /* Allow text to take remaining space */
+    padding: 10px 0; /* Padding for text content */
+}
+
+/* =========================
+   Responsive Styles
+   ========================= */
+@media (max-width: 750px) {
+    /* Navigation Styles for Small Screens */
+    nav {
+      width: 100%; /* Full width for navigation */
+      height: 50px; /* Defined height */
+      top: 80px; /* Positioned right below the header */
+      bottom: auto; /* Remove bottom constraint */
+      flex-direction: row; /* Horizontal layout */
+      justify-content: space-around; /* Space links evenly */
+      align-items: center; /* Center align items */
+      position: fixed; /* Ensure it's fixed */
+      overflow-y: hidden; /* Disable vertical scrolling */
+      z-index: 1001; /* Ensure it's above main content */
+  }
+
+    nav ul {
+        flex-direction: row; /* Horizontal list */
+        justify-content: center; /* Center links */
+        width: 100%; /* Full width */
+    }
+
+    nav li {
+        width: auto; /* Auto width for horizontal items */
+    }
+
+    nav li a {
+        padding: 8px 10px; /* Reduced padding for smaller screens */
+        font-size: calc(14px + 0.3vw); /* Slightly smaller font size */
+        max-width: none; /* Remove max-width */
+        margin: 0; /* Remove margins */
+        height: 100%; /* Full height */
+    }
+
+    /* Header Styles for Small Screens */
+    header {
+        text-align: center; /* Center alignment */
+        padding: 15px 10px; /* Adjusted padding */
+        height: 80px; /* Consistent height */
+    }
+
+    /* Main Content Styles for Small Screens */
+    main {
+        margin-left: 0; /* No offset for smaller screens */
+        padding-top: 130px; /* Space for header and navigation */
+        width: 100%; /* Full width */
+    }
+
+    /* Footer Styles for Small Screens */
+    footer {
+        width: 100%; /* Full width for footer */
+        height: 50px; /* Consistent footer height */
+    }
+
+    /* Adjust Content Container and Projects for Small Screens */
+    .content-container, .project {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .text-content {
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    /* Adjust images in small screens */
+    .content-container img.profile-image {
+        width: 80%; /* Reduce image width for better fit */
+    }
+
+}
